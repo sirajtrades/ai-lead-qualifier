@@ -1,0 +1,16 @@
+{
+  "name": "lead-qualifier-backend",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "npx trigger.dev@latest dev",
+    "deploy": "npx trigger.dev@latest deploy"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.95.1",
+    "@trigger.dev/sdk": "^4.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

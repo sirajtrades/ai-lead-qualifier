@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ─────────────────────────────────────── */
+:root {
+  --bg:             #0C0C0F;
+  --surface:        #13131A;
+  --surface-2:      #1B1B24;
+  --border:         #22222E;
+  --border-bright:  #36364A;
+  --accent:         #F0622A;
+  --accent-dim:     rgba(240, 98, 42, 0.10);
+  --accent-border:  rgba(240, 98, 42, 0.22);
+  --text:           #EDEDF2;
+  --text-secondary: #86869A;
+  --text-tertiary:  #4E4E5C;
+  --hot:            #FF5555;
+  --warm:           #F0622A;
+  --cold:           #6B9EFF;
+  --green:          #3DD68C;
+  --red:            #FF5555;
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-outfit, system-ui), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Form inputs ────────────────────────────────────────── */
+.field-input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--text);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.field-input::placeholder { color: var(--text-tertiary); }
+
+.field-input option {
+  background: #1B1B24;
+  color: var(--text);
+}
+
+/* ─── Analyze button ─────────────────────────────────────── */
+.analyze-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  background: #E3561F;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 24px rgba(240, 98, 42, 0.35);
+}
+
+.analyze-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.analyze-btn:disabled {
+  background: var(--surface-2);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+  border: 1px solid var(--border);
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes scan {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateY(400%);  opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-200%); }
+  100% { transform: translateX(400%);  }
+}
+
+.fade-up {
+  animation: fadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+  background: linear-gradient(transparent, rgba(240, 98, 42, 0.07), transparent);
+  animation: scan 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.shimmer-track {
+  height: 100%;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: shimmer 2s ease-in-out infinite;
+}

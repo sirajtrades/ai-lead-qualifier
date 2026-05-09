@@ -1,0 +1,74 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - generic [ref=e6]: ◆
+          - generic [ref=e7]: POWERED BY CLAUDE
+        - heading "AI Lead Qualifier" [level=1] [ref=e8]
+        - paragraph [ref=e9]: Enter lead details to generate an instant AI qualification report with score, tier, and recommended next steps.
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - generic [ref=e14]: "01"
+            - generic [ref=e15]: Contact
+          - generic [ref=e16]:
+            - generic [ref=e17]:
+              - generic [ref=e18]: First Name *
+              - textbox [ref=e19]
+            - generic [ref=e20]:
+              - generic [ref=e21]: Last Name *
+              - textbox [ref=e22]
+            - generic [ref=e23]:
+              - generic [ref=e24]: Email *
+              - textbox [ref=e25]
+            - generic [ref=e26]:
+              - generic [ref=e27]: Phone
+              - textbox [ref=e28]
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - generic [ref=e31]: "02"
+            - generic [ref=e32]: Company
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - generic [ref=e35]: Company *
+              - textbox [ref=e36]
+            - generic [ref=e37]:
+              - generic [ref=e38]: Role / Title *
+              - textbox [ref=e39]
+            - generic [ref=e40]:
+              - generic [ref=e41]: Company Size
+              - generic [ref=e42]:
+                - combobox [ref=e43] [cursor=pointer]:
+                  - option "Select…" [selected]
+                  - option "1–10 employees"
+                  - option "11–50 employees"
+                  - option "51–200 employees"
+                  - option "201–1,000 employees"
+                  - option "1,000+ employees"
+                - generic: ▼
+            - generic [ref=e44]:
+              - generic [ref=e45]: Budget
+              - generic [ref=e46]:
+                - combobox [ref=e47] [cursor=pointer]:
+                  - option "Select…" [selected]
+                  - option "Under $1,000/mo"
+                  - option "$1,000–$5,000/mo"
+                  - option "$5,000–$20,000/mo"
+                  - option "$20,000+/mo"
+                - generic: ▼
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e50]: "03"
+            - generic [ref=e51]: Context
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]: Use Case
+              - textbox "What problem are they trying to solve?" [ref=e55]
+            - generic [ref=e56]:
+              - generic [ref=e57]: Notes
+              - textbox "Any additional context…" [ref=e58]
+        - button "Analyze Lead →" [ref=e59] [cursor=pointer]:
+          - text: Analyze Lead
+          - generic [ref=e60]: →
+  - alert [ref=e61]
