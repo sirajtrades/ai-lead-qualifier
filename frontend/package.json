@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.105.4",
     "@trigger.dev/sdk": "^4.4.5",
     "next": "^15.0.0",
     "react": "^19.0.0",
