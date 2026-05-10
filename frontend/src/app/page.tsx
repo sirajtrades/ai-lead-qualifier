@@ -263,19 +263,19 @@ export default function Home() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                 <div>
                   <label style={fieldLabel}>First Name <span style={{ color: "var(--accent)" }}>*</span></label>
-                  <input className="field-input" name="firstName" value={form.firstName} onChange={handleChange} required />
+                  <input className="field-input" name="firstName" value={form.firstName} onChange={handleChange} required maxLength={100} />
                 </div>
                 <div>
                   <label style={fieldLabel}>Last Name <span style={{ color: "var(--accent)" }}>*</span></label>
-                  <input className="field-input" name="lastName" value={form.lastName} onChange={handleChange} required />
+                  <input className="field-input" name="lastName" value={form.lastName} onChange={handleChange} required maxLength={100} />
                 </div>
                 <div>
                   <label style={fieldLabel}>Email <span style={{ color: "var(--accent)" }}>*</span></label>
-                  <input className="field-input" name="email" type="email" value={form.email} onChange={handleChange} required />
+                  <input className="field-input" name="email" type="email" value={form.email} onChange={handleChange} required maxLength={254} />
                 </div>
                 <div>
                   <label style={fieldLabel}>Phone</label>
-                  <input className="field-input" name="phone" type="tel" value={form.phone ?? ""} onChange={handleChange} />
+                  <input className="field-input" name="phone" type="tel" value={form.phone ?? ""} onChange={handleChange} maxLength={20} />
                 </div>
               </div>
             </div>
@@ -286,11 +286,11 @@ export default function Home() {
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                 <div>
                   <label style={fieldLabel}>Company <span style={{ color: "var(--accent)" }}>*</span></label>
-                  <input className="field-input" name="company" value={form.company} onChange={handleChange} required />
+                  <input className="field-input" name="company" value={form.company} onChange={handleChange} required maxLength={200} />
                 </div>
                 <div>
                   <label style={fieldLabel}>Role / Title <span style={{ color: "var(--accent)" }}>*</span></label>
-                  <input className="field-input" name="role" value={form.role} onChange={handleChange} required />
+                  <input className="field-input" name="role" value={form.role} onChange={handleChange} required maxLength={200} />
                 </div>
                 <div>
                   <label style={fieldLabel}>Company Size</label>
@@ -352,6 +352,7 @@ export default function Home() {
                     value={form.useCase ?? ""}
                     onChange={handleChange}
                     placeholder="What problem are they trying to solve?"
+                    maxLength={500}
                   />
                 </div>
                 <div>
@@ -364,6 +365,7 @@ export default function Home() {
                     rows={3}
                     placeholder="Any additional context…"
                     style={{ resize: "none" }}
+                    maxLength={1000}
                   />
                 </div>
               </div>
